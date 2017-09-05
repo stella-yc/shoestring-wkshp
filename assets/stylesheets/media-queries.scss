@@ -1,0 +1,24 @@
+// Small devices (landscape phones, 576px and up)
+@for $i from 1 to 13 {
+  .col-sm-#{$i} {
+    @include grid($i)
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  @for $i from 1 to 13 {
+    .col-md-#{$i} {
+      @include grid($i)
+    }
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  @for $i from 1 to 13 {
+    .col-lg-#{$i} {
+      @include grid($i)
+    }
+  }
+}

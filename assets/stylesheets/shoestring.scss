@@ -90,12 +90,13 @@ form {
 
 }
 
-@for $width from 1 to 13 {
-  .col-lg-#{$width} {
-    width: floor(percentage($width / 12)) - 1;
-    display: inline-block;
-    margin: 0px;
-    padding: 1em;
-    vertical-align: top;
-  }
+@mixin grid($width) {
+  width: floor(percentage($width / 12)) - 1;
+  display: inline-block;
+  margin: 0px;
+  padding: 1em;
+  vertical-align: top;
 }
+
+
+@import "media-queries"
