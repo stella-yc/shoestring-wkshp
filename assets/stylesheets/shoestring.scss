@@ -1,0 +1,101 @@
+@import "normalize";
+@import "modern-business";
+
+$light-gray: #d3d3d3;
+
+* {
+  box-sizing: border-box;
+}
+
+@import "navbar";
+
+body {
+  h1 {
+    color: white;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  clear: both;
+}
+
+.row {
+  clear: both;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.img-responsive {
+  width: 100%;
+  height: auto;
+}
+
+.page-header {
+  color: black;
+
+  small {
+    color: gray;
+  }
+}
+
+
+.breadcrumb {
+  background-color: $light-gray;
+  list-style-type: none;
+  padding: 1em;
+  a {
+    color: blue;
+    text-decoration: none;
+  }
+  li {
+    display: inline;
+  }
+  li::after {
+    content: "/";
+    padding: 0 0.5em;
+  }
+  li:last-child::after {
+    content: "";
+  }
+}
+  .btn {
+    padding: 0.7em;
+    border-radius: 5px;
+    border: none;
+    color: white;
+  }
+  .btn-primary {
+    @extend .btn;
+    background-color: blue;
+  }
+form {
+  .form-control {
+    border: 1px solid $light-gray;
+    border-radius: 5px;
+  }
+  input {
+    height: 2em;
+  }
+  textarea {
+    height: 5em;
+    width: 30em;
+  }
+  label {
+    display: block;
+    font-weight: bold;
+  }
+
+}
+
+@for $width from 1 to 13 {
+  .col-lg-#{$width} {
+    width: floor(percentage($width / 12)) - 1;
+    display: inline-block;
+    margin: 0px;
+    padding: 1em;
+    vertical-align: top;
+  }
+}
