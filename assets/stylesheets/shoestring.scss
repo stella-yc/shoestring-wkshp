@@ -52,14 +52,15 @@ body {
   }
   li {
     display: inline;
+    &::after {
+      content: "/";
+      padding: 0 0.5em;
+    }
+    &:last-child::after {
+      content: "";
+    }
   }
-  li::after {
-    content: "/";
-    padding: 0 0.5em;
-  }
-  li:last-child::after {
-    content: "";
-  }
+
 }
   .btn {
     padding: 0.7em;
@@ -88,14 +89,6 @@ form {
     font-weight: bold;
   }
 
-}
-
-@mixin grid($width) {
-  width: floor(percentage($width / 12)) - 1;
-  display: inline-block;
-  margin: 0px;
-  padding: 1em;
-  vertical-align: top;
 }
 
 

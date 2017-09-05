@@ -1,24 +1,24 @@
-// Small devices (landscape phones, 576px and up)
-@for $i from 1 to 13 {
-  .col-sm-#{$i} {
-    @include grid($i)
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
+@mixin grid-columns($screen) {
   @for $i from 1 to 13 {
-    .col-md-#{$i} {
-      @include grid($i)
+    .col-#{$screen}-#{$i} {
+      width: floor(percentage($i / 12));
+      float: left;
+      margin: 0px;
+      padding: 1em;
+      vertical-align: top;
     }
   }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  @for $i from 1 to 13 {
-    .col-lg-#{$i} {
-      @include grid($i)
-    }
+// object-like structure to store key-values
+$type-sizes: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px
+);
+
+@each $type, $size in $type-sizes {
+  @media screen and (min-width: $size) {
+    @include grid-columns($type);
   }
 }
